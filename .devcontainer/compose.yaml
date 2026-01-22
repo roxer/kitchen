@@ -1,0 +1,42 @@
+name: "recruitment-challenge"
+
+services:
+  rails-app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ../../${CODER_WORKSPACE_FOLDER_NAME:-recruitment-challenge}:/workspaces/${CODER_WORKSPACE_FOLDER_NAME:-recruitment-challenge}:cached
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: sleep infinity
+
+    # Uncomment the next line to use a non-root user for all processes.
+    user: vscode
+
+    # Use "forwardPorts" in **devcontainer.json** to forward an app port locally.
+    # (Adding the "ports" property to this file will not forward from a Codespace.)
+    depends_on:
+      # - selenium
+      postgres:
+        condition: service_healthy
+
+  # selenium:
+  #   image: selenium/standalone-chromium
+  #   restart: unless-stopped
+  postgres:
+    image: postgres:16.1
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: pg_isready -U postgres -h 127.0.0.1
+      interval: 5s
+
+volumes:
+  postgres-data:

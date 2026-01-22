@@ -1,0 +1,6 @@
+---
+globs: db/migrate/**/*.rb
+alwaysApply: false
+---
+
+use t.timestamps whenever creating a new table/model with migration

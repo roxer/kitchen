@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+system("bin/prepare_devcontainer", exception: true)
+exec "bundle", "exec", "foreman", "start", "-f", "Procfile.dev", "-p", ENV.fetch("PORT", 3000).to_s, *ARGV

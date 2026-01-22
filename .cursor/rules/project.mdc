@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+
+## Controller Naming
+
+Always use yarn instead of npm to install packages or run scripts
+
+Prefer joined class names for controllers using the `::` namespace separator. For example, use `class API::UsersController` instead of `class Api::UsersController` or nested module syntax.
+
+Note: `API` is configured as an acronym inflection in `config/initializers/inflections.rb`, which allows Rails to properly handle the namespace.

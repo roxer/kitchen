@@ -1,0 +1,17 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.includeLanguages": {
+    "vue": "css"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "markdown.extension.preview.autoShowPreviewToSide": true,
+  "chat.disableAIFeatures": true,
+  "workbench.colorTheme": "Default Dark Modern",
+  "i18next.i18nPaths": "/Users/bartoszkudra/workspaces/EA/recruitment-challenge/config/locales"
+}
+//

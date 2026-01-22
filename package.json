@@ -1,0 +1,49 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext .js,.ts,.tsx"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@iconify-json/lucide": "^1.2.79",
+    "@iconify-json/mdi": "^1.2.3",
+    "@svgr/core": "^8.1.0",
+    "@svgr/plugin-jsx": "^8.1.0",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/bootstrap": "^5.2.10",
+    "@types/node": "^24.10.1",
+    "@types/rails__actioncable": "^8.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-plugin-better-tailwindcss": "^3.8.0",
+    "globals": "^16.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.48.1",
+    "unplugin-icons": "^22.5.0",
+    "vite": "^5.4.21",
+    "vite-plugin-ruby": "^5.1.1"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@rails/actioncable": "^8.1.100",
+    "@react-spectrum/s2": "latest",
+    "axios": "^1.13.2",
+    "bootstrap": "^5.3.8",
+    "dayjs": "^1.11.19",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.11.0",
+    "zustand": "^5.0.9"
+  },
+  "packageManager": "yarn@4.5.1+sha512.341db9396b6e289fecc30cd7ab3af65060e05ebff4b3b47547b278b9e67b08f485ecd8c79006b405446262142c7a38154445ef7f17c1d5d1de7d90bf9ce7054d"
+}
