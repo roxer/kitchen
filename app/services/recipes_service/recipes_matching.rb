@@ -26,20 +26,20 @@ class RecipesService::RecipesMatching < ServiceBase
     where_sql = ""
 
     if cook_time_to.present? && cook_time_from.present?
-      query[:cook_time_to] = cook_time_to
-      query[:cook_time_from] = cook_time_from
+      query[:cook_time_to] = cook_time_to.to_i
+      query[:cook_time_from] = cook_time_from.to_i
       where << " rs.cook_time BETWEEN :cook_time_from AND :cook_time_to "
     end
 
     if prep_time_to.present? && prep_time_from.present?
-      query[:prep_time_to] = prep_time_to
-      query[:prep_time_from] = prep_time_from
+      query[:prep_time_to] = prep_time_to.to_i
+      query[:prep_time_from] = prep_time_from.to_i
       where << " rs.prep_time BETWEEN :prep_time_from AND :prep_time_to "
     end
 
     if rating_to.present? && rating_from.present?
-      query[:rating_to] = rating_to
-      query[:rating_from] = rating_from
+      query[:rating_to] = rating_to.to_f
+      query[:rating_from] = rating_from.to_f
       where << " rs.rating BETWEEN :rating_from AND :rating_to "
     end
 

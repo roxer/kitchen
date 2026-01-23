@@ -9,7 +9,6 @@ import type { PaginationMeta } from "../../types/PaginationMeta";
 import IconChevronLeft from "~icons/lucide/chevron-left";
 import IconChevronRight from "~icons/lucide/chevron-right";
 import {RangeSlider} from '@react-spectrum/s2';
-// import {style} from '@react-spectrum/s2/style' with {type: 'macro'};
 import type { MatchFormData } from "./MatchFormData";
 
 function RecipesTable() {
@@ -50,8 +49,8 @@ function RecipesTable() {
       submitData.prep_time_end = finPrepTime.end;
     }
     if (finRating.start != 0 || finRating.end != 5) {
-      submitData.prep_time_start = finRating.start;
-      submitData.prep_time_end = finRating.end;
+      submitData.rating_start = finRating.start;
+      submitData.rating_end = finRating.end;
     }
     if (nameMatch != null) {
       submitData.name_match = nameMatch;
@@ -231,7 +230,7 @@ function RecipesTable() {
                           src={decodeImageURI(recipe.image || "")}
                           width={40} height={40}
                           className="cursor-pointer"
-                          onClick={() => setIsRecipeModalOpen(true)}
+                          onClick={() => handleDependenciesModal(recipe.id)}
                           alt='food' />
                       </td>
                       <td className="px-6 py-4 text-sm whitespace-nowrap text-gray-900">
@@ -272,7 +271,7 @@ function RecipesTable() {
       {/* Recipe Modal */}
       <DependenciesModal
         isOpen={isRecipeModalOpen}
-        recipeId={recipeId || 0}
+        recipeId={recipeId}
         onClose={() => setIsRecipeModalOpen(false)}
         onSuccess={handleRecipeFilter}
       />

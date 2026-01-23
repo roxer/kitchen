@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Mission Control Jobs dashboard for Solid Queue
-  mount MissionControl::Jobs::Engine, at: "/jobs"
+  # mount MissionControl::Jobs::Engine, at: "/jobs"
 
   # Users API routes
 

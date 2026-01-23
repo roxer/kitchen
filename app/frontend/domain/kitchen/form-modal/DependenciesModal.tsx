@@ -7,7 +7,7 @@ import type { Ingredient } from "../Ingredient";
 
 interface DependenciesModalProps {
   isOpen: boolean;
-  recipeId: number;
+  recipeId: number | null;
   onClose: () => void;
   onSuccess: () => void;
 }
@@ -28,7 +28,7 @@ function DependenciesModal({ isOpen, onClose, recipeId, onSuccess }: Dependencie
     setError(null);
 
     try {
-      const response = await kitchenService.getDependencies(recipeId);
+      const response = await kitchenService.getDependencies(recipeId || 0);
       setIngredients(response.ingredients);
       setTitle(response.title);
 
@@ -75,7 +75,7 @@ function DependenciesModal({ isOpen, onClose, recipeId, onSuccess }: Dependencie
             <div className="border-b border-gray-200 bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <div className="flex items-center justify-between">
                 <h3 className="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                  Recipe {title}
+                  Recipe: {title}
                 </h3>
                 <h5>(with Topological sorting)</h5>
                 <button
