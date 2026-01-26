@@ -10,6 +10,7 @@ import IconChevronLeft from "~icons/lucide/chevron-left";
 import IconChevronRight from "~icons/lucide/chevron-right";
 import {RangeSlider} from '@react-spectrum/s2';
 import type { MatchFormData } from "./MatchFormData";
+import sygnet2 from "@assets/images/popup-svgrepo-com.svg";
 
 function RecipesTable() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -220,9 +221,13 @@ function RecipesTable() {
                     <tr key={recipe.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 text-sm whitespace-nowrap text-gray-900">
                         <button onClick={() => handleDependenciesModal(recipe.id)}
-                          className="cursor-pointer underline color-blue"
+                          className="cursor-pointer underline color-blue "
                         >
                           {recipe.title || "—"}
+                          <img src={sygnet2}
+                               alt="Logo"
+                               className="inline-block mb-6 h-4 bg-cyan-300 hover:bg-orange-400 cursor-pointer"
+                          />
                         </button>
                       </td>
                       <td className="px-6 py-4 text-sm whitespace-nowrap text-gray-500">
